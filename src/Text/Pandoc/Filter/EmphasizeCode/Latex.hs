@@ -45,11 +45,11 @@ instance Renderable Latex where
   renderEmphasized _ (_, classes, _) lines' =
     Pandoc.RawBlock
       (Pandoc.Format "latex")
-      (Text.unpack (encloseInVerbatim emphasized))
+      (encloseInVerbatim emphasized)
     where
       languageAttr =
         case classes of
-          [lang] -> ",language=" <> Text.pack lang
+          [lang] -> ",language=" <> lang
           _      -> ""
       encloseInTextIt style t
         | Text.null t = t
