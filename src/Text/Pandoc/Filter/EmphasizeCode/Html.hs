@@ -9,6 +9,7 @@ import Data.List (intersperse)
 import qualified Data.Text as Text
 import qualified Data.Text.Lazy as TextLazy
 import qualified Lucid as Html
+import qualified Lucid.Base as HtmlBase
 import qualified Text.Pandoc.Definition as Pandoc
 
 import Text.Pandoc.Filter.EmphasizeCode.Chunking
@@ -43,13 +44,14 @@ instance Renderable Html where
       (Pandoc.Format "html")
       (TextLazy.toStrict . Html.renderText $ emphasized)
     where
-      classAttrs =
+      preAttrs =
         if null classes
           then []
           else [Html.class_ $ Text.concat classes]
+      codeAttrs = [HtmlBase.makeAttribute "data-noescape" ""]
       emphasized =
-        Html.pre_ classAttrs $
-        Html.code_ $
+        Html.pre_ preAttrs $
+        Html.code_ codeAttrs $
         mconcat
           (intersperse
              (Html.toHtmlRaw ("\n" :: Text.Text))

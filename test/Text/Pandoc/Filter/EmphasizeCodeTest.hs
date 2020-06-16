@@ -14,7 +14,7 @@ singleRangeHtmlMark =
   RawBlock
     "html"
     (mconcat
-       [ "<pre class=\"my-lang\"><code>hello world\n"
+       [ "<pre class=\"my-lang\"><code data-noescape>hello world\n"
        , "hej <mark class=\"inline\">världen</mark>\n"
        , "<mark class=\"inline\">hallo</mark> welt\n"
        , "hei verden</code></pre>"
@@ -25,7 +25,7 @@ singleRangeHtmlEm =
   RawBlock
     "html"
     (mconcat
-       [ "<pre class=\"my-lang\"><code>hello world\n"
+       [ "<pre class=\"my-lang\"><code data-noescape>hello world\n"
        , "hej <em class=\"inline\">världen</em>\n"
        , "<em class=\"inline\">hallo</em> welt\n"
        , "hei verden</code></pre>"
@@ -47,7 +47,7 @@ spec_emphasizeCode = do
     RawBlock
       "html"
       (mconcat
-         [ "<pre class=\"my-lang\"><code>hello world\n"
+         [ "<pre class=\"my-lang\"><code data-noescape>hello world\n"
          , "hej <mark class=\"inline\">världen</mark>\n"
          , "<mark class=\"inline\">hallo welt</mark>\n"
          , "<mark class=\"inline\">hei</mark> verden</code></pre>"
@@ -57,7 +57,7 @@ spec_emphasizeCode = do
     RawBlock
       "html"
       (mconcat
-         [ "<pre class=\"my-lang\"><code>hello world\n"
+         [ "<pre class=\"my-lang\"><code data-noescape>hello world\n"
          , "<mark class=\"block\">hej världen</mark>\n"
          , "<mark class=\"block\">hallo welt</mark>\n"
          , "hei verden</code></pre>"
@@ -67,7 +67,7 @@ spec_emphasizeCode = do
     RawBlock
       "html"
       (mconcat
-         [ "<pre class=\"my-lang\"><code><mark class=\"inline\">hello</mark> world\n"
+         [ "<pre class=\"my-lang\"><code data-noescape><mark class=\"inline\">hello</mark> world\n"
          , "hej <mark class=\"inline\">världen</mark>\n"
          , "<mark class=\"inline\">hallo</mark> welt\n"
          , "hei verden</code></pre>"
@@ -77,7 +77,7 @@ spec_emphasizeCode = do
     RawBlock
       "html"
       (mconcat
-         [ "<pre class=\"my-lang\"><code><mark class=\"block\">hello world</mark>\n"
+         [ "<pre class=\"my-lang\"><code data-noescape><mark class=\"block\">hello world</mark>\n"
          , "hej <mark class=\"inline\">världen</mark>\n"
          , "<mark class=\"inline\">hallo</mark> welt\n"
          , "hei verden</code></pre>"
