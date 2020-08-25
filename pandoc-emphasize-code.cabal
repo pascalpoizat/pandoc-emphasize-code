@@ -45,7 +45,7 @@ executable pandoc-emphasize-code
     other-modules:   Paths_pandoc_emphasize_code
     main-is:         Main.hs
     build-depends:   base                 >= 4        && < 5
-                   , pandoc-types         >= 1.20     && <= 1.20
+                   , pandoc-types         >= 1.21     && <= 1.21
                    , pandoc-emphasize-code
 
 test-suite filter-tests
@@ -59,7 +59,7 @@ test-suite filter-tests
                      Text.Pandoc.Filter.EmphasizeCode.Testing.Ranges
     build-depends:   base                 >= 4        && < 5
                    , unordered-containers >= 0.2      && < 0.3
-                   , pandoc-types         >= 1.20     && <= 1.20
+                   , pandoc-types         >= 1.21     && <= 1.21
                    , pandoc-emphasize-code
                    , tasty
                    , tasty-hunit
